@@ -3,7 +3,7 @@ FROM dunglas/frankenphp:php8.4.8
 COPY bin/* /usr/local/bin/
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    git libzip-dev zip librabbitmq-dev \
+    git zip \
     && docker-php-ext-install intl pdo pdo_mysql xsl bcmath \
     && pecl install redis \
     && pecl install apcu \
